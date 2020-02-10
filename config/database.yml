@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  pool: 5
+
+development:
+  <<: *default
+  database: layout_template_development
+
+test:
+  <<: *default
+  database: layout_template_test
