@@ -1,0 +1,7 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = render 'layouts/head'
+
+  %body{ class: "layout-template #{controller.controller_name}-#{controller.action_name}" }
+    = yield

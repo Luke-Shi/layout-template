@@ -1,0 +1,92 @@
+/* public values */
+$general-gutter: map-get( $grid-margin-gutters, medium )
+$form-gutter: $general-gutter
+$form-border: $gray-light
+$form-input-height: 45px
+$consumer-header-height: 80px
+$consumer-sidenav-width: 260px
+
+
+/* public mixins */
+@mixin hover-action()
+  +transform(translate(0, -1px))
+  transition: all 0.3s ease 0s
+
+@mixin flex($align: center, $justify: center, $dir: row, $is_wrap: nowrap)
+  display: flex
+  flex-direction: $dir
+  align-items: $align
+  justify-content: $justify
+  flex-wrap: $is_wrap
+
+@mixin background($bg_size: cover, $bg_position: center, $bg_repeat: no-repeat)
+  background-size: $bg_size
+  background-position: $bg_position
+  background-repeat: $bg_repeat
+
+@mixin calc($property, $expression)
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+@mixin fa_icon($content-code, $color: $black, $font-size: inherit)
+  position: absolute
+  content: $content-code
+  font-family: "FontAwesome"
+  color: $color
+  font-size: $font-size
+
+@mixin fa_icon_pro($content-code, $color: $black, $font-size: inherit)
+  position: absolute
+  content: $content-code
+  font-family: "Font Awesome 5 Pro"
+  color: $color
+  font-size: $font-size
+
+@mixin appearance($val)
+  -webkit-appearance: $val
+  -moz-appearance: $val
+  appearance: $val
+
+/* custom public html components */
+a:not(.button)
+  color: $oil
+  font-size: 14px
+  +transition(all 0.2s ease)
+  &:hover
+    color: $gray
+  &.radius-hover
+    line-height: 1
+    padding: 2px 8px !important
+    border-radius: 50px
+    &:hover
+      background-color: $gray-light
+
+// for gird or row system: remove first item padding/margin-left & last item padding/margin-right
+.justified
+  > .cell:first-of-type, > .column:first-of-type
+    padding-left: 0 !important
+    margin-left: 0 !important
+  > .cell:last-of-type, > .column:last-of-type
+    padding-right: 0 !important
+    margin-right: 0 !important
+
+
+/* global public class */
+.action-area
+  +flex(center, flex-start)
+  &.wrap
+    flex-wrap: wrap
+  &.space-between
+    justify-content: space-between
+  &.stricked
+    max-width: 800px
+  .button
+    margin-bottom: 0
+    margin-right: 4px
+    &:last-child
+      margin: 0
+
+
+
+
