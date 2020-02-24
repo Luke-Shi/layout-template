@@ -4,4 +4,6 @@
     = render 'layouts/head'
 
   %body{ class: "layout-template #{controller.controller_name}-#{controller.action_name}" }
-    = yield
+    #offCanvas.off-canvas.position-right{"data-off-canvas": ""}
+          = render 'sidenav'
+        
