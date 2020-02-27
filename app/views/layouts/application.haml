@@ -5,5 +5,9 @@
 
   %body{ class: "layout-template #{controller.controller_name}-#{controller.action_name}" }
     #offCanvas.off-canvas.position-right{"data-off-canvas": ""}
-          = render 'sidenav'
+      = render 'sidenav'
+    .off-canvas-content{"data-off-canvas-content": ""}
+      .show-for-medium= render 'sidenav'
+      .main-content
+        = yield
         
