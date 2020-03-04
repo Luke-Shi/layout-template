@@ -1,3 +1,53 @@
+/* global component values */
+$general-gutter: map-get( $grid-margin-gutters, medium )
+$form-gutter: $general-gutter
+$form-border: $gray-light
+$form-input-height: 45px
+$consumer-header-height: 80px
+$consumer-sidenav-width: 260px
+
+/* global mixins */
+@mixin hover-action()
+  +transform(translate(0, -1px))
+  transition: all 0.3s ease 0s
+
+@mixin flex($align: center, $justify: center, $dir: row, $is_wrap: nowrap)
+  display: flex
+  flex-direction: $dir
+  align-items: $align
+  justify-content: $justify
+  flex-wrap: $is_wrap
+
+@mixin background($bg_size: cover, $bg_position: center, $bg_repeat: no-repeat)
+  background-size: $bg_size
+  background-position: $bg_position
+  background-repeat: $bg_repeat
+
+@mixin calc($property, $expression)
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+@mixin fa_icon($content-code, $color: $black, $font-size: inherit)
+  position: absolute
+  content: $content-code
+  font-family: "FontAwesome"
+  color: $color
+  font-size: $font-size
+
+@mixin fa_icon_pro($content-code, $color: $black, $font-size: inherit)
+  position: absolute
+  content: $content-code
+  font-family: "Font Awesome 5 Pro"
+  color: $color
+  font-size: $font-size
+
+@mixin appearance($val)
+  -webkit-appearance: $val
+  -moz-appearance: $val
+  appearance: $val
+
+/* global body style & class */
 html, body
   width: 100%
   min-height: 100vh
@@ -13,7 +63,7 @@ html, body
   .orbit, .orbit div, ul
     &:focus
       outline: none !important
-  label 
+  label
     font-size: 1rem
   h1, h2, h3, h4, h5, h6, p, label, a, span
     &.small

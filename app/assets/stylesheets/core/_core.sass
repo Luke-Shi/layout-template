@@ -1,5 +1,3 @@
-// @import "fonts"
-
 $size-list: 0 1 5 8 10 15 18 20 30 40 50 55 60 70 75 80 90 100 120 130 150 200 250 260 300 350 440
 $font-list: 12 14 16 18 20 22 24 26 28 30 40 45 50 60 70 80 90 100 120 150
 $align-list: left center right
@@ -45,7 +43,7 @@ $breakpoint-list: "#{map-get($breakpoints, small)}" "#{map-get($breakpoints, med
     // Height Pixel
     .#{$screen}-height-#{$i}px
       height: 1px * $i !important
-    
+
     // Height vh
     .#{$screen}-height-#{$i}vh
       height: 1vh * $i !important
@@ -67,7 +65,7 @@ $breakpoint-list: "#{map-get($breakpoints, small)}" "#{map-get($breakpoints, med
       // Margin Top Bottom
       .#{$screen}-margin-#{$side}-#{$i}
         margin-#{$side}: 1px * $i !important
-  
+
   @each $side in $sides-list
     // Side Borders
     .#{$screen}-border-#{$side}
@@ -79,7 +77,7 @@ $breakpoint-list: "#{map-get($breakpoints, small)}" "#{map-get($breakpoints, med
     // flex justify ways
     .#{$screen}-#{$justify_way}
       justify-content: $justify_way !important
-  
+
   // Font Sizes
   @each $fs in $font-list
     .#{$screen}-fontsize-#{$fs}
