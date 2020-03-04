@@ -1,8 +1,8 @@
-$size-list: 0 1 5 8 10 15 18 20 30 40 50 55 60 70 75 80 90 100 120 130 150 200 250 260 300 350 440
+$size-list: 0 1 4 5 8 10 15 18 20 30 40 50 55 60 70 75 80 90 100
 $font-list: 12 14 16 18 20 22 24 26 28 30 40 45 50 60 70 80 90 100 120 150
 $align-list: left center right
 $sides-list: top bottom left right
-$justify-list: flex-start flex-end center space-between space-around
+$flex-list: flex-start flex-end center space-between space-around
 $screen-list: small medium large
 $breakpoint-list: "#{map-get($breakpoints, small)}" "#{map-get($breakpoints, medium)}" "#{map-get($breakpoints, large)}" "#{map-get($breakpoints, xlarge)}"
 
@@ -73,10 +73,13 @@ $breakpoint-list: "#{map-get($breakpoints, small)}" "#{map-get($breakpoints, med
       border-#{$side}-style: solid
       border-color: transparent
 
-  @each $justify_way in $justify-list
-    // flex justify ways
-    .#{$screen}-#{$justify_way}
-      justify-content: $justify_way !important
+  @each $flex_way in $flex-list
+    // flex justify content ways
+    .#{$screen}-justify-#{$flex_way}
+      justify-content: $flex_way !important
+    // flex align items ways
+    .#{$screen}-align-#{$flex_way}
+      align-items: $flex_way !important
 
   // Font Sizes
   @each $fs in $font-list
