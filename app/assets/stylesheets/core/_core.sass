@@ -56,6 +56,22 @@ $breakpoint-list: "#{map-get($breakpoints, small)}" "#{map-get($breakpoints, med
     .#{$screen}-margin-#{$i}
       margin: 1px * $i !important
 
+    // horizontal padding
+    .#{$screen}-padding-sides-#{$i}
+      padding: 0 (1px * $i) 0 (1px * $i) !important
+
+    // horizontal margin
+    .#{$screen}-margin-sides-#{$i}
+      margin: 0 (1px * $i) 0 (1px * $i) !important
+
+    // vertical padding
+    .#{$screen}-padding-vsides-#{$i}
+      padding: (1px * $i) 0 (1px * $i) 0 !important
+
+    // vertical margin
+    .#{$screen}-margin-vsides-#{$i}
+      margin: (1px * $i) 0 (1px * $i) 0 !important
+
     // Build for sides
     @each $side in $sides-list
       // Padding Top Bottom
@@ -76,15 +92,18 @@ $breakpoint-list: "#{map-get($breakpoints, small)}" "#{map-get($breakpoints, med
   @each $flex_way in $flex-list
     // flex justify content ways
     .#{$screen}-justify-#{$flex_way}
+      display: flex !important
       justify-content: $flex_way !important
     // flex align items ways
     .#{$screen}-align-#{$flex_way}
+      display: flex !important
       align-items: $flex_way !important
 
   // Font Sizes
   @each $fs in $font-list
     .#{$screen}-fontsize-#{$fs}
       font-size: rem-calc(1 * $fs) !important
+
 // nc-icon
 @each $i in $size-list
   svg.size-#{$i}

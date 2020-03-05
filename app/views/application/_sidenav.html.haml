@@ -1,10 +1,50 @@
 .sidenav
-  .sidenav-logo
-    LAYOUT TEMPLATE
-  %ul.vertical.menu
+  %ul.vertical.menu.accordion-menu{"data-accordion-menu" => ""}
     %li
       %a
-        = 'Form'
+        .list-icon.folder
+        File System
+      %ul.menu.vertical.nested
+        %li
+          %a
+            .list-icon.folder
+            Preset
+        %li
+          %a
+            .list-icon.folder
+            Core
+          %ul.menu.vertical.nested
+            %li
+              %a
+                .list-icon.folder
+                Mixins
+            %li
+              %a
+                .list-icon.file
+                Core
+        %li
+          %a
+            .list-icon.file
+            Style
+        %li
+          %a
+            .list-icon.file
+            Components
     %li
       %a
-        = 'Table'
+        .list-icon
+          %i.fas.fa-book-spells
+        UI Elements
+      %ul.menu.vertical.nested
+        %li
+          %a
+            .list-icon
+              %i.far.fa-file-edit
+            Form
+        %li
+          %a
+            .list-icon
+              %i.far.fa-table
+            Table
+
+

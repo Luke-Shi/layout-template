@@ -3,13 +3,13 @@ $general-gutter: map-get( $grid-margin-gutters, medium )
 $form-gutter: $general-gutter
 $form-border: $gray-light
 $form-input-height: 45px
-$consumer-header-height: 80px
-$consumer-sidenav-width: 260px
+$header-height: 80px
+$sidenav-width: 260px
 
 /* global mixins */
 @mixin hover-action()
   +transform(translate(0, -1px))
-  transition: all 0.3s ease 0s
+  transition: all 0.2s ease 0s
 
 @mixin flex($align: center, $justify: center, $dir: row, $is_wrap: nowrap)
   display: flex
