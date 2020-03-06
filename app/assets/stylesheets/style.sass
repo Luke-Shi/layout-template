@@ -1,53 +1,13 @@
 /* global component values */
 $column-gutter: map-get( $grid-margin-gutters, medium )
+$column-gutter-small: map-get( $grid-margin-gutters, small )
 $form-gutter: $column-gutter
 $form-border: $gray-light
 $form-input-height: 45px
 $header-height: 80px
 $sidenav-width: 260px
 
-/* global mixins */
-@mixin hover-action()
-  +transform(translate(0, -1px))
-  transition: all 0.2s ease 0s
-
-@mixin flex($align: center, $justify: center, $dir: row, $is_wrap: nowrap)
-  display: flex
-  flex-direction: $dir
-  align-items: $align
-  justify-content: $justify
-  flex-wrap: $is_wrap
-
-@mixin background($bg_size: cover, $bg_position: center, $bg_repeat: no-repeat)
-  background-size: $bg_size
-  background-position: $bg_position
-  background-repeat: $bg_repeat
-
-@mixin calc($property, $expression)
-  #{$property}: -moz-calc(#{$expression})
-  #{$property}: -webkit-calc(#{$expression})
-  #{$property}: calc(#{$expression})
-
-@mixin fa_icon($content-code, $color: $black, $font-size: inherit)
-  position: absolute
-  content: $content-code
-  font-family: "FontAwesome"
-  color: $color
-  font-size: $font-size
-
-@mixin fa_icon_pro($content-code, $color: $black, $font-size: inherit)
-  position: absolute
-  content: $content-code
-  font-family: "Font Awesome 5 Pro"
-  color: $color
-  font-size: $font-size
-
-@mixin appearance($val)
-  -webkit-appearance: $val
-  -moz-appearance: $val
-  appearance: $val
-
-/* global body style & class */
+/* global body style */
 html, body
   width: 100%
   min-height: 100vh
@@ -72,6 +32,7 @@ html, body
     overflow-x: hidden
     width: 100%
 
+/* default global classes */
 .background-cover
   background-size: cover !important
   background-position: center !important
@@ -140,3 +101,30 @@ html, body
 
 .width-fit
   width: fit-content !important
+
+/* customised global classes */
+.action-area
+  +flex(center, flex-start)
+  flex-wrap: wrap
+  &.wrap
+    flex-wrap: wrap
+  &.space-between
+    justify-content: space-between
+  &.align-right
+    justify-content: flex-end
+  &.stricked
+    max-width: 800px
+  .button
+    margin-bottom: 0
+    margin-right: 4px
+    &:last-child
+      margin: 0
+  .underlined
+    +flex
+    height: 50px
+    color: $gray
+    text-decoration: underline
+    font-weight: 500
+    font-size: 16px
+    &:hover
+      +hover-action

@@ -1,11 +1,12 @@
 %header
   .logo-area
-    = image_tag("logo-on_white.png")
+    = link_to root_path do
+      = image_tag("logo-on_white.png")
   .top-bar
     .top-bar-left
       %ul.breadcrumbs
         %li
-          %a{:href => "#"} Home
+          = link_to "Home", root_path
         %li
           %a{:href => "#"} File System
         %li

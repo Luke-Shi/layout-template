@@ -54,12 +54,29 @@
                 Core
         %li
           %a
-            .list-icon.file
-            Style
+            .list-icon.folder
+            Components
+          %ul.menu.vertical.nested
+            %li
+              %a
+                .list-icon.file
+                Header
+            %li
+              %a
+                .list-icon.file
+                Sidenav
+            %li
+              %a
+                .list-icon.file
+                Table
+            %li
+              %a
+                .list-icon.file
+                Form
         %li
           %a
             .list-icon.file
-            Components
+            Style
     %li
       %a
         .list-icon
@@ -67,7 +84,7 @@
         UI Elements
       %ul.menu.vertical.nested
         %li
-          %a
+          = link_to pages_form_page_path do
             .list-icon
               %i.far.fa-file-edit
             Form

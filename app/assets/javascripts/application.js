@@ -16,4 +16,10 @@
 //= require turbolinks
 //= require foundation
 
-$(function(){ $(document).foundation(); });
+$(document).ready(function(){
+  $(document).foundation();
+});
+
+$(document).on('turbolinks:load', function() {
+  $(document).foundation();
+});
