@@ -29,12 +29,17 @@ $gray-text: #DADBDC;
 $border: #EAEAEA;
 
 // put customised colors here
+$blue: #0088CC;
+$sky: #5BC0DE;
+$green: #62C462;
+$orange: #FBB450;
+$red: #EE5F5B;
 $sidenav-hover: $gray-lighter;
 $sidenav-active: #C7CBD1;
 
 // set foundation color palette
 $foundation-palette: (
-  primary: $oil,
+  primary: $blue,
   secondary: $gray,
   success: $green,
   warning: $yellow,

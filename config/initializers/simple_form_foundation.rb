@@ -4,7 +4,7 @@
 # components.
 # See https://github.com/heartcombo/simple_form#custom-components to know
 # more about custom components.
-# Dir[Rails.root.join('lib/components/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('lib/components/**/*.rb')].each { |f| require f }
 #
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
@@ -15,18 +15,25 @@ SimpleForm.setup do |config|
   # doesn't provide styles for hints. You will need to provide your own CSS styles for hints.
   # Uncomment them to enable hints.
 
-  config.wrappers :vertical_form, class: :input, hint_class: :field_with_hint, error_class: :error, valid_class: :valid do |b|
-    b.use :html5
+  config.wrappers :vertical_form, tag: 'div', class: 'form-group-v', hint_class: :field_with_hint, error_class: :error do |b|
+    # b.use :html5
     b.use :placeholder
     b.optional :maxlength
-    b.optional :minlength
     b.optional :pattern
     b.optional :min_max
     b.optional :readonly
-    b.use :label_input
-    b.use :error, wrap_with: { tag: :small, class: :error }
 
-    # b.use :hint,  wrap_with: { tag: :span, class: :hint }
+    b.wrapper :label_wrapper, tag: :div, class: 'input-label' do |ba|
+      ba.use :label
+    end
+    b.wrapper :input_wrapper, tag: :div, class: 'input' do |ba|
+      ba.use :prepend
+      ba.use :input
+      ba.use :append
+    end
+
+    b.use :error, wrap_with: { tag: :small, class: :error }
+    b.use :hint,  wrap_with: { tag: :span, class: :hint }
   end
 
   config.wrappers :horizontal_form, tag: 'div', class: 'row', hint_class: :field_with_hint, error_class: :error, valid_class: :valid do |b|

@@ -4,7 +4,8 @@ class PagesController < ApplicationController
   end
 
   def form_page
-    @info = PageInformation.find_by(id: params[:id])
+    # @info = PageInformation.
+    @info = PageInformation.new
   end
 
 end

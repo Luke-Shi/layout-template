@@ -2,5 +2,13 @@
   .cell.small-12.medium-10
     .panel
       .panel-heading
-        Basic Form Elements
+        .title
+          Basic Form Elements
       .panel-body
+        .form-wrapper
+          = simple_form_for @info, url: pages_form_page_path do |f|
+            .form-inputs
+              = f.input :first_name, label: "First Name"
+              = f.input :last_name, label: "Last Name"
+              = f.input :email, label: "Email"
+              = f.input :dob, label: "Date of Birth"

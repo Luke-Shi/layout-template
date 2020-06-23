@@ -82,7 +82,7 @@
         .list-icon
           %i.fas.fa-book-spells
         UI Elements
-      %ul.menu.vertical.nested
+      %ul.menu.vertical.nested{class: "#{controller.controller_name == 'pages' ? 'is-active' : ''}"}
         %li
           = link_to pages_form_page_path, class: "#{controller.action_name == 'form_page' ? 'active' : ''}" do
             .list-icon
